@@ -131,13 +131,15 @@ useEffect(() => {
     }
   };
 
+  const dt = new Intl.DateTimeFormat(undefined, {dateStyle: "medium", timeStyle: "short"});
+
   return (
     <div className="app-shell">
       <div className="container">
         <header className="header">
           <div className="title">
             <h1>My Notes</h1>
-            <div className="subtitle">Secure notes with Clerk + MongoDB</div>
+            <div className="subtitle">Secure notes for an easy life</div>
           </div>
           <div>
             <SignedOut>
@@ -178,6 +180,9 @@ useEffect(() => {
               {notes.map((n) => (
                 <div className="note" key={n._id || n.id}>
                   <div className="note-text">{n.text}</div>
+                  <div className="note-meta">
+                    {n.createdAt ? dt.format(new Date(n.createdAt)) : ""}
+                  </div>
                   <div style={{marginLeft:12}}>
                     <button className="btn btn-ghost" onClick={() => deleteNote(n._id || n.id)}>
                       Delete

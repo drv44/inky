@@ -144,6 +144,12 @@ body{
   flex:1;
 }
 
+.note-meta{
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 6px;
+}
+
 /* empty state */
 .empty {
   color: var(--muted);
@@ -157,4 +163,7 @@ body{
 @media (max-width:640px){
   .form-row{ flex-direction: column; align-items: stretch; }
   .btn { width:100%; }
+  .note-meta {
+    color: var(--muted);
+  }
 }
