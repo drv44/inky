@@ -99,9 +99,15 @@ const PORT = process.env.PORT || 4000;
 const MONGO_URI = process.env.MONGODB_URI;
 const DB_NAME = process.env.DB_NAME || "notesdb";
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://inky-rho.vercel.app/"
+];
+
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(cors({ origin: allowedOrigins }));
 // clerk middleware attaches auth state to the request
 app.use(clerkMiddleware()); // overview docs show it attaches auth to req [web:3]
 
