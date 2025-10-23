@@ -1,2 +1,4 @@
 /backend/.env
 /frontend/clerk-notes/.env
+/backend/node_modules
+/frontend/clerk-notes/node_modulesnode_modules/
